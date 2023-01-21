@@ -2,5 +2,6 @@
     "image":"mcr.microsoft.com/devcontainers/universal:2",
     "extensions": [
         "icii.arctic-fox"
-    ]
+    ],
+    "postCreateCommand": "sudo mkdir /icii/ && sudo mkdir /icii/arcticfox/ && sudo mkdir /icii/downloads/ && read -p $'Enter your username:\n' username && read -sp $'Enter your password:\n' password && echo \"\" && sudo curl -X GET http://arcticfoxalpha.com/arcticfox/download-zip -H 'Content-Type: application/json' -d '{\"email\":\"'${username}'\",\"password\":\"'${password}'\"}' --output /icii/downloads/ArcticFox.zip && cd /icii/downloads/ && sudo unzip ArcticFox.zip && cd ArcticFox*/ && sudo chmod +x ArcticFoxInstaller.sh && source ArcticFoxInstaller.sh"
 }
